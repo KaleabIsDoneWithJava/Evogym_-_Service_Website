@@ -20,7 +20,7 @@ const Home = ({ setSelectedPage }: Props) => {
       {/* IMAGE AND MAIN HEADER */}
       <div className="mx-auto h-5/6 w-5/6 items-center justify-center md:flex">
         {/* MAIN HEADER */}
-        <div className="z-10 mt-32 md:basis-3/5">
+        <div className="z-10 mt-32  md:basis-3/5">
           {/* HEADINGS */}
           <div className="md:-mt-20">
             <div className="relative">
@@ -28,7 +28,7 @@ const Home = ({ setSelectedPage }: Props) => {
                 <img alt="home-page-text" src={HomePageText} />
               </div>
             </div>
-            <p>
+            <p className="tex-sm mt-8 md:text-start">
               Unrivaled Gym. Uparalleled Training Fitness Classes. World Class
               Studios to get the Body Shapes That you Dream of... Get your Dream
               Body Now.
@@ -69,7 +69,6 @@ const Home = ({ setSelectedPage }: Props) => {
           </div>
         </div>
       )}
-      <div className="h-[500px]"></div>
     </section>
   );
 };
