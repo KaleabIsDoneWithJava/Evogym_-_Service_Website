@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/24/solid";
 import Benefit from "./Benefit";
 import ActionButton from "@/shared/ActionButton";
+import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png";
 
 const benefits: Array<BenefitType> = [
   {
@@ -89,24 +90,46 @@ const Benefits = ({ setSelectedPage }: Props) => {
 
       {/* GRAPHICS AND DESCRIPTION */}
       <div>
-        <div>
+        <div className="mt-16 items-center justify-between gap-20 md:mt-28 md:flex">
           {/* GRAPHIC */}
-          <img />
+          <img
+            className="mx-auto"
+            alt="benefits-page-graphic"
+            src={BenefitsPageGraphic}
+          />
           {/* DESCRIPTION */}
           <div>
             {/* TITLE */}
             <div className="relative">
               <div className="before:absolute before:-left-20 before:-top-20 before:z-[-1] before:content-abstractwaves">
-                <div>
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5 }}
+                  variants={{
+                    hidden: { opacity: 0, x: -50 },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                >
                   <HText>
                     MILLIONS OF HAPPY MEMBERS GETTING{" "}
                     <span className="text-primary-500">FIT</span>.
                   </HText>
-                </div>
+                </motion.div>
               </div>
             </div>
             {/* DESCRIPTION */}
-            <div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, x: -50 },
+                visible: { opacity: 1, x: 0 },
+              }}
+            >
               <p className="my-5">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -126,7 +149,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
                 nulla pellentesque dignissim. Scelerisque purus semper eget duis
                 at tellus.
               </p>
-            </div>
+            </motion.div>
             {/* BUTTON */}
             <div className="relative mt-16">
               <div className="before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
