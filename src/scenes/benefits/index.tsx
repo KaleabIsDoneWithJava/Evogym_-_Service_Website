@@ -7,6 +7,7 @@ import {
   UserGroupIcon,
 } from "@heroicons/react/24/solid";
 import Benefit from "./Benefit";
+import ActionButton from "@/shared/ActionButton";
 
 const benefits: Array<BenefitType> = [
   {
@@ -85,6 +86,58 @@ const Benefits = ({ setSelectedPage }: Props) => {
           />
         ))}
       </motion.div>
+
+      {/* GRAPHICS AND DESCRIPTION */}
+      <div>
+        <div>
+          {/* GRAPHIC */}
+          <img />
+          {/* DESCRIPTION */}
+          <div>
+            {/* TITLE */}
+            <div className="relative">
+              <div className="before:absolute before:-left-20 before:-top-20 before:z-[-1] before:content-abstractwaves">
+                <div>
+                  <HText>
+                    MILLIONS OF HAPPY MEMBERS GETTING{" "}
+                    <span className="text-primary-500">FIT</span>.
+                  </HText>
+                </div>
+              </div>
+            </div>
+            {/* DESCRIPTION */}
+            <div>
+              <p className="my-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ullamcorper a lacus vestibulum sed arcu. Praesent tristique
+                magna sit amet purus gravida quis blandit turpis. Sit amet
+                cursus sit amet dictum sit amet. Felis imperdiet proin fermentum
+                leo vel orci porta. Tristique senectus et netus et malesuada
+                fames. Facilisis mauris sit amet massa vitae tortor condimentum
+                lacinia.
+              </p>
+              <p className="mb-5">
+                Tellus in hac habitasse platea dictumst vestibulum rhoncus est.
+                Fames ac turpis egestas sed tempus urna. Vitae congue eu
+                consequat ac felis donec. Nibh sit amet commodo nulla facilisi
+                nullam vehicula ipsum a. Nisi lacus sed viverra tellus in hac
+                habitasse platea. Ultrices gravida dictum fusce ut placerat orci
+                nulla pellentesque dignissim. Scelerisque purus semper eget duis
+                at tellus.
+              </p>
+            </div>
+            {/* BUTTON */}
+            <div className="relative mt-16">
+              <div className="before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
+                <ActionButton setSelectedPage={setSelectedPage}>
+                  Join Now
+                </ActionButton>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
