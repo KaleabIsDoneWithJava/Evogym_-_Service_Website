@@ -11,6 +11,8 @@ const Class = ({ name, description, image }: Props) => {
     bg-primary-500 text-center text-white opacity-0 
     transition duration-500 hover:opacity-90`;
 
+  //TODO: Make overlay styles more suitable for small screens and not on hover
+
   return (
     <li className="relative mx-5 inline-block w-[310px] xs:h-[380px] xs:w-[450px] ">
       <div className={overlayStyles}>
