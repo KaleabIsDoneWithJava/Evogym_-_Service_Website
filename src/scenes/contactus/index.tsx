@@ -9,8 +9,6 @@ type Props = {
 };
 
 function ContactUs({ setSelectedPage }: Props) {
-  const inputStyles = `"w-full rounded-lg border-2 border-gray-500 px-5 py-3 placeholder-gray-500"`;
-
   const {
     register,
     trigger, //allows us to validate our form if needed. Async function.
@@ -69,9 +67,10 @@ function ContactUs({ setSelectedPage }: Props) {
               onSubmit={onSubmit}
               action="https://formsubmit.co/el/hobime"
               method="POST"
+              //className="flex flex-col gap-6"
             >
               <input
-                className="w-full rounded-lg border-2 border-gray-300 px-5 py-3 placeholder-gray-500 active:border-gray-500"
+                className="mt-5 w-full rounded-lg border-2 border-gray-300 px-5 py-3 placeholder-gray-100 focus:border-primary-500 focus:outline-none"
                 type="text"
                 placeholder="NAME"
                 {...register("name", {
@@ -86,6 +85,46 @@ function ContactUs({ setSelectedPage }: Props) {
                     "Max length is 100 characters."}
                 </p>
               )}
+              <input
+                className=" mt-5 w-full rounded-lg border-2 border-gray-300 px-5 py-3 placeholder-gray-100 focus:border-primary-500 focus:outline-none"
+                type="text"
+                placeholder="EMAIL"
+                {...register("email", {
+                  required: true,
+                  pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, // Fooking regex
+                })}
+              />
+              {errors.email && (
+                <p className="mt-1 text-red-500 ">
+                  {errors.email.type === "required" &&
+                    "This Field is required."}
+                  {errors.email.type === "pattern" && "Invalid email address."}
+                </p>
+              )}
+              <textarea
+                className="mt-5  w-full rounded-lg border-2 border-gray-300 px-5 py-3 placeholder-gray-100 focus:border-primary-500 focus:outline-none"
+                placeholder="MESSAGE"
+                rows={4}
+                cols={50}
+                {...register("message", {
+                  required: true,
+                  maxLength: 2000,
+                })}
+              />
+              {errors.message && (
+                <p className="mt-1 text-red-500 ">
+                  {errors.message.type === "required" &&
+                    "This Field is required."}
+                  {errors.message.type === "maxLength" &&
+                    "Max length is 2,000 characters."}
+                </p>
+              )}
+              <button
+                type="submit"
+                className="mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white"
+              >
+                SUBMIT
+              </button>
             </form>
           </motion.div>
         </div>
