@@ -49,14 +49,16 @@ function ContactUs({ setSelectedPage }: Props) {
             a lacus vestibulum sed arcu.
           </p>
         </motion.div>
+
         {/* FORM & IMAGE */}
-        <div className="mt-10 justify-between gap-8 md:flex">
+
+        <div className="mt-10 items-center justify-between gap-16 md:flex">
           <motion.div
             className="mt-10 basis-3/5 md:mt-0"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
+            transition={{ duration: 0.5 }}
             variants={{
               hidden: { opacity: 0, y: 50 },
               visible: { opacity: 1, y: 0 },
@@ -67,10 +69,9 @@ function ContactUs({ setSelectedPage }: Props) {
               onSubmit={onSubmit}
               action="https://formsubmit.co/el/hobime"
               method="POST"
-              //className="flex flex-col gap-6"
             >
               <input
-                className="mt-5 w-full rounded-lg border-2 border-gray-300 px-5 py-3 placeholder-gray-100 focus:border-primary-500 focus:outline-none"
+                className="mb-6 w-full rounded-lg border-2 border-gray-300 px-5 py-3 placeholder-gray-100 focus:border-primary-500 focus:outline-none"
                 type="text"
                 placeholder="NAME"
                 {...register("name", {
@@ -86,8 +87,8 @@ function ContactUs({ setSelectedPage }: Props) {
                 </p>
               )}
               <input
-                className=" mt-5 w-full rounded-lg border-2 border-gray-300 px-5 py-3 placeholder-gray-100 focus:border-primary-500 focus:outline-none"
-                type="text"
+                className=" mb-6 w-full rounded-lg border-2 border-gray-300 px-5 py-3 placeholder-gray-100 focus:border-primary-500 focus:outline-none"
+                type="email"
                 placeholder="EMAIL"
                 {...register("email", {
                   required: true,
@@ -101,8 +102,24 @@ function ContactUs({ setSelectedPage }: Props) {
                   {errors.email.type === "pattern" && "Invalid email address."}
                 </p>
               )}
+              <input
+                className="mb-6 w-full rounded-lg border-2 border-gray-300 px-5 py-3 placeholder-gray-100 focus:border-primary-500 focus:outline-none"
+                type="text"
+                placeholder="SUBJECT"
+                {...register("subject", {
+                  required: true,
+                  maxLength: 200,
+                })}
+              />
+              {errors.name && (
+                <p className="mt-1 text-red-500 ">
+                  {errors.name.type === "required" && "This Field is required."}
+                  {errors.name.type === "maxLength" &&
+                    "Max length is 200 characters."}
+                </p>
+              )}
               <textarea
-                className="mt-5  w-full rounded-lg border-2 border-gray-300 px-5 py-3 placeholder-gray-100 focus:border-primary-500 focus:outline-none"
+                className="mb-6  w-full rounded-lg border-2 border-gray-300 px-5 py-3 placeholder-gray-100 focus:border-primary-500 focus:outline-none"
                 placeholder="MESSAGE"
                 rows={4}
                 cols={50}
@@ -121,11 +138,33 @@ function ContactUs({ setSelectedPage }: Props) {
               )}
               <button
                 type="submit"
-                className="mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white"
+                className=" rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white"
               >
-                SUBMIT
+                Submit
               </button>
             </form>
+          </motion.div>
+
+          {/* IMAGE */}
+
+          <motion.div
+            className="relative mt-16 basis-2/5 md:mt-0"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+          >
+            <div className="w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1] md:before:content-evolvetext">
+              <img
+                className="w-full"
+                alt="contact-us-page-graphic"
+                src={ContactUsPageGraphic}
+              />
+            </div>
           </motion.div>
         </div>
       </motion.div>
