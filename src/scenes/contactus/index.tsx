@@ -9,6 +9,19 @@ type Props = {
 };
 
 function ContactUs({ setSelectedPage }: Props) {
+  const {
+    register,
+    trigger, //allows us to validate our form if needed. Async function.
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (e: any) => {
+    const isValid = await trigger();
+    if (!isValid) {
+      e.preventDefault();
+    }
+  };
+
   return (
     <section id="contactus" className="mx-auto w-5/6 pb-32 pt-24">
       <motion.div
@@ -36,6 +49,26 @@ function ContactUs({ setSelectedPage }: Props) {
             a lacus vestibulum sed arcu.
           </p>
         </motion.div>
+        {/* FORM & IMAGE */}
+        <div className="mt-10 justify-between gap-8 md:flex">
+          <motion.div
+            className="mt-10 basis-3/5 md:mt-0"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+          >
+            <form target="blank" onSubmit={onSubmit} action="https://formsubmit.co/el/hobime♠" method="POST">
+              <input
+
+               />
+            </form>
+          </motion.div>
+        </div>
       </motion.div>
     </section>
   );
