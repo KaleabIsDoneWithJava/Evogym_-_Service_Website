@@ -1,4 +1,32 @@
-# React + TypeScript + Vite
+
+# Evogym Webapp
+
+A service website for an imaginary gym brand with a contact form. I Learned **Typescript** and **Tailwind** with React and Vite doing this project.
+ 
+
+## Acknowledgements
+
+ - [The YouTube video I followed to build this.](https://youtu.be/I2NNxr3WPDo)
+
+
+## Install and Run
+
+Install my-project with npm
+
+```bash
+  npm install my-project
+  cd my-project
+  npm run dev
+```
+    
+## Documentation
+
+You can use your email to play around with the Contact Us form. 😁
+
+- [Form Submit](https://formsubmit.co)
+
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
