@@ -5,7 +5,7 @@ type Props = {
 };
 
 const Class = ({ name, description, image }: Props) => {
-  const overlayStyles = `p-5 absolute z-30 flex h-[235px]
+  const overlayStyles = `p-5 absolute z-3 flex h-[235px]
     xs:h-[380px] w-[310px] xs:w-[450px] flex-col 
     items-center justify-center whitespace-normal 
     bg-primary-500 text-center text-white opacity-0 
