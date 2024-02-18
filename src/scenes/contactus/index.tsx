@@ -67,7 +67,8 @@ function ContactUs({ setSelectedPage }: Props) {
             <form
               target="blank"
               onSubmit={onSubmit}
-              action="https://formsubmit.co/el/hobime"
+              // Use your own email link form
+              //action="https://formsubmit.co/el/hobime"
               method="POST"
             >
               <input
