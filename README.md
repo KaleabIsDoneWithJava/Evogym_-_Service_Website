@@ -2,6 +2,8 @@
 # Evogym Webapp
 
 A service website for an imaginary gym brand with a contact form. I Learned **Typescript** and **Tailwind** with React and Vite doing this project.
+
+![Evogym thumbnail](https://github.com/KaleabIsDoneWithJava/Evogym_-_Service_Website/assets/84039838/7efd6a25-6f06-4f30-8289-b194fc0aab1a)
  
 
 ## Acknowledgements
